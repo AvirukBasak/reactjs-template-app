@@ -2,7 +2,7 @@
     background-color: rgb(8, 60, 60);
     background-image: linear-gradient(to bottom,
             rgba(45, 3, 47, 0.699),
-            rgba(23, 23, 125, 0.5)), url('/res/background.jpg');
+            rgba(23, 23, 125, 0.5)), url('/images/background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;

@@ -13,7 +13,8 @@ module.exports = {
     resolve: {
         extensions: ['', '.js', '.jsx', '.json'],
         alias: {
-            '@': [Paths.src, Paths.public],
+            '': Paths.public,
+            '@': Paths.src,
         },
     },
     output: {
@@ -35,14 +36,6 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader']
-            },
-            {
-                test: /\.(ttf|eot|woff|woff2)$/,
-                loader: 'url-loader',
-            },
-            {
-                test: /\.(jpe?g|png|gif|svg|ico)$/,
-                loader: 'url-loader',
             },
         ]
     },

@@ -5,8 +5,8 @@ Create a new project by cloning this repo.
 
 - Make changes to `src/components/*.jsx`
 - Add JS modules to `src/scripts/*.js`
-- Add CSS to `public/styles/*.css`
-- Link your CSS in `src/index.html`
+- Add CSS to `src/styles/*.css`
+- Add images and fonts in `public/`
 
 ## Run server
 ```
