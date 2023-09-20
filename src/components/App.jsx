@@ -1,7 +1,5 @@
-import React from "react";
+import React from 'react';
 import printHelloWorld from '@/scripts/script';
-
-import '@/styles/global.css';
 import AppStyles from '@/styles/App.module.css';
 
 export default class App extends React.Component {

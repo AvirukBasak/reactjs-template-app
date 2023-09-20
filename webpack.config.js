@@ -1,21 +1,26 @@
 const path = require('path');
 const HWP = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+
+const Paths = {
+    src: path.join(__dirname, 'src'),
+    build: path.join(__dirname, 'build'),
+    public: path.join(__dirname, 'public'),
+};
 
 module.exports = {
-    entry: path.join(__dirname, '/src/index.js'),
+    entry: path.join(Paths.src, 'index.js'),
     resolve: {
         extensions: ['', '.js', '.jsx', '.json'],
-        alias: {
-            '@': [
-                path.resolve(__dirname, "src"),
-                path.resolve(__dirname, "public"),
-            ]
-        },
+        alias: { '@': Paths.src },
     },
     output: {
-        filename: 'build.js',
-        path: path.join(__dirname, '/build'),
+        filename: '[name].bundle.js',
+        path: Paths.build,
+    },
+    performance: {
+        hints: false,
+        maxEntrypointSize: 512000,
+        maxAssetSize: 512000
     },
     module: {
         rules: [
@@ -29,15 +34,17 @@ module.exports = {
                 use: ['style-loader', 'css-loader']
             },
             {
-                test: /\.(jpe?g|gif|png|svg|ico)$/,
-                loader: 'url-loader'
-            }
+                test: /\.(ttf|eot|woff|woff2)$/,
+                loader: 'url-loader',
+            },
+            {
+                test: /\.(jpe?g|png|gif|svg|ico)$/,
+                loader: 'url-loader',
+            },
         ]
     },
     plugins: [
-        new HWP({ template: path.join(__dirname, '/src/index.html') }),
-        new CopyWebpackPlugin({
-            patterns: [{ from: path.join(__dirname, '/public') }]
-        }),
+        new HWP({ template: path.join(Paths.src, 'index.html') }),
+        // new HWP({ favicon: path.join(Paths.src, 'favicon.svg') }),
     ]
 }
