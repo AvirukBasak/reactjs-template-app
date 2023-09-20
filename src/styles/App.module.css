@@ -1,0 +1,7 @@
+.background {
+    background-image: url('@/res/background.jpg');
+}
+
+.background h1 {
+    color: purple;
+}
