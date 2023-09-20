@@ -7,9 +7,11 @@ Create a new project by cloning this repo.
 - Do not touch `src/index.js`
 - Add components to `src/components/*.jsx`
 - Add JS modules to `src/scripts/*.js`
-- Add global CSS to `styles/global.css`
-- Add styles in `styles/*.module.css`
+- Add global CSS to `src/styles/global.css`
+- Add local styles in `src/styles/*.module.css`
 - Add images and fonts in `public/`
+
+*Note*: All `public` resources should be loaded in `.css` and `.jsx` files with respect to `/`.
 
 ## Run server
 ```
