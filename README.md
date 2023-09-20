@@ -3,21 +3,24 @@
 ## Getting started
 Create a new project by cloning this repo.
 
-- Make changes to `src/components/*.jsx`
+- Template file `src/index.html`
+- Do not touch `src/index.js`
+- Add components to `src/components/*.jsx`
 - Add JS modules to `src/scripts/*.js`
-- Add CSS to `src/styles/*.css`
+- Add global CSS to `styles/global.css`
+- Add styles in `styles/*.module.css`
 - Add images and fonts in `public/`
 
 ## Run server
 ```
-npm i
+npm install
 npm start
 ```
 
 ## Build
 You may build the app and serve it statically in say a python server
 ```
-npm i
+npm install
 npm run build
 python -m http.server --bind 127.0.0.1 -d static 8080
 ```
