@@ -9,8 +9,9 @@
 /coverage
 
 # webpack
-dist/
-build/
+/dist
+/build
+/static
 
 # production
 /build
