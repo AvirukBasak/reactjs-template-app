@@ -11,6 +11,8 @@ Create a new project by cloning this repo.
 - Add styles in `styles/*.module.css`
 - Add images and fonts in `public/`
 
+*Note*: All `public` resources should be loaded in `.css` and `.jsx` files with respect to `/`.
+
 ## Run server
 ```
 npm install
