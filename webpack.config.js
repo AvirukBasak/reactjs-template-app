@@ -10,9 +10,9 @@ const CWP = require('copy-webpack-plugin');
 
 /* list of paths of this project */
 const Paths = {
-    src: path.join(__dirname, 'src'),       // jsx, styles and browser js
-    build: path.join(__dirname, 'static'),  // output can be served statically
-    public: path.join(__dirname, 'public'), // public resources
+    src: path.join(__dirname, 'src'),          // jsx, styles and browser js
+    build: path.join(__dirname, '../static'),  // output can be served statically
+    public: path.join(__dirname, 'public'),    // public resources
 };
 
 module.exports = {
@@ -25,7 +25,7 @@ module.exports = {
         /* the magic that allows accessing public res via `/`
            and src files via `@/` prefixes */
         alias: {
-            '': Paths.public,
+            '@public': Paths.public,
             '@': Paths.src,
         },
     },
