@@ -1,0 +1,33 @@
+.app {
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    background-color: rgb(8, 60, 60);
+
+    background-image:
+        linear-gradient(to bottom,
+            rgba(45, 3, 47, 0.834),
+            rgba(11, 11, 60, 0.788)),
+        url('@images/background.jpg');
+
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.app h1 {
+    color: rgb(169, 169, 197);
+    padding: 20px 0;
+}
+
+.app p {
+    color: white;
+}
+
+.app img {
+    width: 50%;
+}

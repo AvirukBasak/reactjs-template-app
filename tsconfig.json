@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "ES5",                                     /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+    "jsx": "react",                                      /* Specify what JSX code is generated. */
+    "module": "commonjs",                                /* Specify what module code is generated. */                             /* Specify the base directory to resolve non-relative module names. */
+    "paths": {                                           /* Specify a set of entries that re-map imports to additional lookup locations. */
+      "@/*": ["./src/*"],
+      "@components/*": ["./src/components/*"],
+      "@contexts/*": ["./src/contexts/*"],
+      "@fonts/*": ["./src/fonts/*"],
+      "@images/*": ["./src/images/*"],
+      "@pages/*": ["./src/pages/*"],
+      "@styles/*": ["./src/styles/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@public/*": ["./public/*"],
+    },
+    "types": [                                           /* Type declaration files to be included in compilation. */
+      "@types/jest",
+      "@types/node",
+      "@types/react",
+      "@types/react-dom"
+    ],
+    "inlineSourceMap": true,                             /* Include sourcemap files inside the emitted JavaScript. */
+    "esModuleInterop": true,                             /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */
+    "forceConsistentCasingInFileNames": true,            /* Ensure that casing is correct in imports. */
+    "strict": true,                                      /* Enable all strict type-checking options. */
+    "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
+  },
+  "include": ["declaration.d.ts", "./src/**/*.ts*"],
+  "exclude": ["./node_modules/**/*", "./dist/**/*", "./lib/**/*"]
+}

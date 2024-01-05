@@ -1,0 +1,32 @@
+{
+    "configurations": [
+        {
+            "command": "npm start",
+            "name": "npm start: Runs the app in the development mode. Open http://localhost:3000 to view it in the browser.",
+            "request": "launch",
+            "type": "node-terminal",
+            "cwd": "${workspaceFolder}/"
+        },
+        {
+            "command": "npm run dev",
+            "name": "npm run dev: Builds the app in the development mode.",
+            "request": "launch",
+            "type": "node-terminal",
+            "cwd": "${workspaceFolder}/"
+        },
+        {
+            "command": "npm run build",
+            "name": "npm build: Builds the app for production to the 'dist/' folder",
+            "request": "launch",
+            "type": "node-terminal",
+            "cwd": "${workspaceFolder}/"
+        },
+        {
+            "command": "npm run test",
+            "name": "npm test: Runs the test watcher in an interactive mode",
+            "request": "launch",
+            "type": "node-terminal",
+            "cwd": "${workspaceFolder}/"
+        }
+    ]
+}
