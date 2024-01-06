@@ -10,6 +10,7 @@
     "types": [
       "./src/index.d.ts",
       "node",
+      "jest",
       "react",
       "react-dom",
       "react-router-dom",
