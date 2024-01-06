@@ -3,21 +3,52 @@
 ## Getting started
 Create a new project by cloning this repo.
 
-- Template file `src/index.html`
-- Do not touch `src/index.js`
-- Add components to `src/components/*.jsx`
-- Add browser JS modules to `src/scripts/*.js`
-- Add global CSS to `src/styles/global.css`
-- Add local styles in `src/styles/*.module.css`
-- Add images and fonts in `public/`
+- `src/components` contains all the components
+- `src/context` contains all the context providers
+- `src/fonts` contains font files
+- `src/images` contains image files
+- `src/mocks` contains mock data for testing
+- `src/pages` contains all the pages for routing
+- `src/styles` contains global styles
+- `src/types` contains type definitions
+- `src/utils` contains utility functions
+- `src/index.tsx` is the entry point for the app
+- `src/index.html` is the HTML template for the app
 
-*Note*: All `public` resources should be loaded in `.css` and `.jsx` files with respect to `@public/`.
-However, when using HTML in JSX (like an `img` tag, publi resources should be loaded wrt `/`)
+## Module aliases
+- `@/` resolves to `src/`
+- `@public/` resolves to `public/` (untested)
+
+## Component directory structure
+- `MyComponent/`
+  - `MyComponent.css` is the component's styles
+  - `MyComponent.test.tsx` is the test file
+  - `index.tsx` exports the component
+
+## Dependencies Used
+- [Babel](https://babeljs.io/)
+- [ESLint](https://eslint.org/)
+- [Jest](https://jestjs.io/)
+- [PostCSS](https://postcss.org/)
+- [ReactJS](https://reactjs.org/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Webpack](https://webpack.js.org/)
+
+## TailwindCSS Limitations
+- Cannot use utility classes in `className` prop of React components
+- Can use utility classes via `@apply` in CSS files
 
 ## Run server
 ```
 npm install
 npm start
+```
+
+## Test
+```
+npm install
+npm run test
 ```
 
 ## Build
@@ -26,4 +57,12 @@ You may build the app and serve it statically in say a python server
 npm install
 npm run build
 python -m http.server --bind 127.0.0.1 -d static 8080
+```
+
+## Dev Build
+You may build the app and serve it statically in say a python server
+```
+npm install
+npm run dev
+python -m http.server --bind
 ```
