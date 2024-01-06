@@ -4,5 +4,12 @@
     "javascript.preferences.quoteStyle": "double",
     "javascript.suggest.paths": true,
     "javascript.suggest.autoImports": true,
-    "js/ts.implicitProjectConfig.experimentalDecorators": false
+    "js/ts.implicitProjectConfig.experimentalDecorators": false,
+    "eslint.enable": true,
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "typescript",
+        "typescriptreact"
+    ],
 }

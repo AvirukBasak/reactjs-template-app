@@ -15,6 +15,20 @@
         "react"
     ],
     "rules": {
+        "semi": "error",
+        "quotes": "error",
+        "jsx-quotes": [
+            "error",
+            "prefer-double"
+        ]
     },
-    "include": ["declaration.d.ts", "./src/**/*.ts*"]
+    "ignorePatterns": [
+        "node_modules",
+        "dist",
+        "lib",
+        "build",
+        "public",
+        "webpack.config.js",
+        "tailwind.config.js"
+    ]
 }

@@ -12,25 +12,35 @@ const isProduction = process.env.NODE_ENV == "production";
 
 /** list of paths of this project */
 const PATHS = {
+    this: __dirname,
     src: path.join(__dirname, "src"),          // jsx, styles and browser js
     build: path.join(__dirname, "dist"),       // output can be served statically
     public: path.join(__dirname, "public"),    // public resources
 };
 
+PATHS.include = [PATHS.src];
+PATHS.exclude = [
+    path.join(PATHS.this, "node_modules"),
+    path.join(PATHS.this, "dist"),
+    path.join(PATHS.this, "public"),
+    path.join(PATHS.this, "lib"),
+];
+
+
 /** webpack mode */
 const wpcMode = isProduction ? "producion" : "development";
 
 /** webpack entry point */
-const wpcEntry = path.join(PATHS.src, "index");
+const wpcEntry = path.join(PATHS.src, 'index');
 
 const wpcResolve = {
     /* no idea why I put it and at this point am too
        afraid to remove it */
-    extensions: [".tsx", ".ts", ".jsx", ".js", ".json", ""],
-    /* the magic that allows importing via "@" prefix */
+    extensions: ['.tsx', '.ts', '.jsx', '.js', '.json', '...'],
+    /* the magic that allows importing via '@' prefix */
     alias: {
-        "@": PATHS.src,
-        "@public": PATHS.public,
+        '@': PATHS.src,
+        '@public': PATHS.public,
     },
 };
 
@@ -38,7 +48,7 @@ const wpcResolve = {
    the bundle script is the result of compiling
    all js and jsx code into one js script.
    this compilation is done by webpack and babel. */
-const wpcOutput = {
+   const wpcOutput = {
     path: PATHS.build,
 };
 
@@ -52,9 +62,9 @@ const wpcPerformance = {
 /* webpack dev server config */
 const wpcDevServer = {
     port: 3000,
-    host: "0.0.0.0",
+    host: '0.0.0.0',
     compress: true,
-    allowedHosts: "all",
+    allowedHosts: 'all',
     hot: true
 };
 
@@ -64,33 +74,35 @@ const wpcModule = {
         {
             test: /\.css$/,
             use: [
-                { loader: "style-loader" },
-                { loader: "css-loader", options: { modules: true } },
-            ]
+                { loader: 'style-loader' },
+                { loader: 'css-loader', options: { modules: true } },
+            ],
+            include: PATHS.include,
+            exclude: PATHS.exclude,
         },
-        /* assets */
+        /* assets, file-loader and url-loader are unnecessary for new webpack versions */
         {
             test: /\.(eot|svg|ttf|woff|woff2|png|jpe?g|jp2|gif)$/i,
-            type: "asset/resource",
+            type: 'asset/resource',
+            include: PATHS.include,
+            exclude: PATHS.exclude,
         },
-        /* exclude node_modules from ts-loader */
+        /* ts-loader > babel-loader : include only src dir */
         {
             test: /\.(ts|tsx)$/i,
-            loader: "ts-loader",
-            exclude: ["/node_modules/"],
-        },
-        /* loader rules for jsx and js files */
-        {
-            test: /\.(js|jsx)$/,
-            exclude: /node_modules/,
-            loader: "babel-loader",
+            use: [
+                { loader: 'babel-loader', options: { presets: ['@babel/preset-env'] }},
+                { loader: 'ts-loader', options: { transpileOnly: true } },
+            ],
+            include: PATHS.include,
+            exclude: PATHS.exclude,
         },
     ]
 };
 
 const wpcPlugins = [
     /* browser entry point html, hooked up with *.bundle.js */
-    new HtmlWebpackPlugin({ template: path.join(PATHS.src, "index.html") }),
+    new HtmlWebpackPlugin({ template: path.join(PATHS.src, 'index.html') }),
 
     /* copy public resources into build dir, otherwise you cannot
        access the public resources in browser */
