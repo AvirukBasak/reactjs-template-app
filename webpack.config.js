@@ -4,31 +4,31 @@
 /* This file is in CommonJS syntax.
    Converting it into ES modules syntax MAY NOT work. */
 
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const isProduction = process.env.NODE_ENV == "production";
+const isProduction = process.env.NODE_ENV == 'production';
 
 /** list of paths of this project */
 const PATHS = {
     this: __dirname,
-    src: path.join(__dirname, "src"),          // jsx, styles and browser js
-    build: path.join(__dirname, "dist"),       // output can be served statically
-    public: path.join(__dirname, "public"),    // public resources
+    src: path.join(__dirname, 'src'),          // jsx, styles and browser js
+    build: path.join(__dirname, 'dist'),       // output can be served statically
+    public: path.join(__dirname, 'public'),    // public resources
 };
 
 PATHS.include = [PATHS.src];
 PATHS.exclude = [
-    path.join(PATHS.this, "node_modules"),
-    path.join(PATHS.this, "dist"),
-    path.join(PATHS.this, "public"),
-    path.join(PATHS.this, "lib"),
+    path.join(PATHS.this, 'node_modules'),
+    path.join(PATHS.this, 'dist'),
+    path.join(PATHS.this, 'public'),
+    path.join(PATHS.this, 'lib'),
 ];
 
 
 /** webpack mode */
-const wpcMode = isProduction ? "producion" : "development";
+const wpcMode = isProduction ? 'producion' : 'development';
 
 /** webpack entry point */
 const wpcEntry = path.join(PATHS.src, 'index');

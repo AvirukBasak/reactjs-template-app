@@ -7,7 +7,7 @@ import styles from './App.css'
 const App = (): JSX.Element => {
   printHelloWorld()
   return (
-    <div className={styles.app}>
+    <div className={styles.app + ' font-bold'}>
       <h1>Demo App</h1>
       <p>This is a Paragraph</p>
       <img src={background} />
