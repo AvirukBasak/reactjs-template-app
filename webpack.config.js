@@ -30,13 +30,6 @@ const wpcResolve = {
     /* the magic that allows importing via "@" prefix */
     alias: {
         "@": PATHS.src,
-        "@components": path.join(PATHS.src, "components"),
-        "@contexts": path.join(PATHS.src, "contexts"),
-        "@fonts": path.join(PATHS.src, "fonts"),
-        "@images": path.join(PATHS.src, "images"),
-        "@pages": path.join(PATHS.src, "pages"),
-        "@styles": path.join(PATHS.src, "styles"),
-        "@utils": path.join(PATHS.src, "utils"),
         "@public": PATHS.public,
     },
 };

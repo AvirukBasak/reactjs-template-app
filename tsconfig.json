@@ -5,13 +5,6 @@
     "module": "commonjs",                                /* Specify what module code is generated. */                             /* Specify the base directory to resolve non-relative module names. */
     "paths": {                                           /* Specify a set of entries that re-map imports to additional lookup locations. */
       "@/*": ["./src/*"],
-      "@components/*": ["./src/components/*"],
-      "@contexts/*": ["./src/contexts/*"],
-      "@fonts/*": ["./src/fonts/*"],
-      "@images/*": ["./src/images/*"],
-      "@pages/*": ["./src/pages/*"],
-      "@styles/*": ["./src/styles/*"],
-      "@utils/*": ["./src/utils/*"],
       "@public/*": ["./public/*"],
     },
     "types": [                                           /* Type declaration files to be included in compilation. */
