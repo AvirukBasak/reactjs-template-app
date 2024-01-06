@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "target": "ES5",                                     /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
-    "jsx": "preserve",                                   /* Specify what JSX code is generated. */
-    "module": "commonjs",                                /* Specify what module code is generated. */                             /* Specify the base directory to resolve non-relative module names. */
+    "jsx": "react",                                      /* Specify what JSX code is generated. */
+    "module": "CommonJS",                                /* Specify what module code is generated. */                             /* Specify the base directory to resolve non-relative module names. */
     "paths": {                                           /* Specify a set of entries that re-map imports to additional lookup locations. */
       "@/*": ["./src/*"],
       "@public/*": ["./public/*"],

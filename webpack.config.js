@@ -48,7 +48,7 @@ const wpcResolve = {
    the bundle script is the result of compiling
    all js and jsx code into one js script.
    this compilation is done by webpack and babel. */
-   const wpcOutput = {
+const wpcOutput = {
     path: PATHS.build,
 };
 
@@ -87,13 +87,10 @@ const wpcModule = {
             include: PATHS.include,
             exclude: PATHS.exclude,
         },
-        /* ts-loader > babel-loader : include only src dir */
+        /* ts-loader supports react JSX */
         {
             test: /\.(ts|tsx)$/i,
-            use: [
-                { loader: 'babel-loader', options: { presets: ['@babel/preset-env'] }},
-                { loader: 'ts-loader', options: { transpileOnly: true } },
-            ],
+            use: ['ts-loader'],
             include: PATHS.include,
             exclude: PATHS.exclude,
         },
