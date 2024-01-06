@@ -91,7 +91,7 @@ const wpcModule = {
         /* ts-loader supports react JSX */
         {
             test: /\.(ts|tsx)$/i,
-            use: ['ts-loader'],
+            use: ['babel-loader'],
             include: PATHS.include,
             exclude: PATHS.exclude,
         },
