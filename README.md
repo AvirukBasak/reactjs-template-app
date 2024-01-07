@@ -21,7 +21,7 @@ Create a new project by cloning this repo.
 
 ## Component directory structure
 - `MyComponent/`
-  - `MyComponent.css` is the component's styles
+  - `MyComponent.module.css` is the component's styles
   - `MyComponent.test.tsx` is the test file
   - `index.tsx` exports the component
 
