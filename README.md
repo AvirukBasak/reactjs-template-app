@@ -56,7 +56,7 @@ You may build the app and serve it statically in say a python server
 ```
 npm install
 npm run build
-python -m http.server --bind 127.0.0.1 -d static 8080
+python -m http.server --bind 127.0.0.1 -d dist 8080
 ```
 
 ## Dev Build
@@ -64,5 +64,5 @@ You may build the app and serve it statically in say a python server
 ```
 npm install
 npm run dev
-python -m http.server --bind
+python -m http.server --bind 127.0.0.1 -d dist 8080
 ```
