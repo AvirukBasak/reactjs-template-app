@@ -73,11 +73,7 @@ const wpcModule = {
         /* loader rules for css files */
         {
             test: /\.css$/,
-            use: [
-                { loader: 'style-loader' },
-                { loader: 'css-loader', options: { modules: true } },
-                { loader: 'postcss-loader' },
-            ],
+            use: ['style-loader', 'css-loader', 'postcss-loader'],
             include: PATHS.include,
             exclude: PATHS.exclude,
         },
