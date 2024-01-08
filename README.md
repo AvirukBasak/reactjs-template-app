@@ -6,7 +6,7 @@ Create a new project by cloning this repo.
 - `src/components` contains all the components
 - `src/context` contains all the context providers
 - `src/fonts` contains font files
-- `src/images` contains image files
+- `src/res` contains image files
 - `src/mocks` contains mock data for testing
 - `src/pages` contains all the pages for routing
 - `src/styles` contains global styles
@@ -14,6 +14,9 @@ Create a new project by cloning this repo.
 - `src/utils` contains utility functions
 - `src/index.tsx` is the entry point for the app
 - `src/index.html` is the HTML template for the app
+
+### Warning
+Jest ignores assets and CSS files, hence to validate if correct assets and CSS are being imported, you will need to customize jest with your own loaders/presets.
 
 ## Module aliases
 - `@/` resolves to `src/`

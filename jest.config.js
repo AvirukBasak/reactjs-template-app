@@ -10,5 +10,7 @@ module.exports = {
     "\\.(css|less)$": "<rootDir>/src/mocks/fileMock.ts",
     "@/(.*)": "<rootDir>/src/$1",
     "@public/(.*)": "<rootDir>/public/$1",
-  }
+  },
+  setupFilesAfterEnv: ["<rootDir>/src/setupTests.ts"],
+  testEnvironment: "jsdom",
 };

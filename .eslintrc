@@ -20,7 +20,8 @@
         "jsx-quotes": [
             "error",
             "prefer-double"
-        ]
+        ],
+        "@typescript-eslint/strict-boolean-expressions": "off"
     },
     "ignorePatterns": [
         "node_modules",
