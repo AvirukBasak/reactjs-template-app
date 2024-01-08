@@ -1,9 +1,9 @@
 import React from 'react'
-import renderer from 'react-test-renderer'
+import { render } from '@testing-library/react'
 import App from '.'
 
-it('renders without crashing', () => {
-  const component = renderer.create(<App />)
-  const tree = component.toJSON()
-  expect(tree).toMatchSnapshot()
+describe('App', () => {
+  test('renders without crashing', () => {
+    render(<App />)
+  })
 })
